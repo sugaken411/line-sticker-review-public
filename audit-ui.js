@@ -32,8 +32,9 @@
  }
  function preview(a,zoom=false){
   const b=el('button',null,'preview'+(zoom?' zoompreview':''));b.type='button';b.setAttribute('aria-label',a.name+'を拡大');
-  const tile=el('span',null,'tile'),p=a.preview;tile.style.backgroundImage='url("gen-assets/sheet-'+String(p.sheet).padStart(2,'0')+'.webp")';tile.style.backgroundPosition=(p.column/7*100)+'% '+(p.row/7*100)+'%';b.append(tile);
-  b.onclick=()=>{if(zoom)return;$('zoomImage').replaceChildren(preview(a,true));$('zoomName').textContent=a.name;$('zoomSource').href=a.url;$('zoom').showModal();};return b;
+  const image=el('img'),status=el('span','画像を読み込み中…','image-status');image.alt=a.name;image.className='preview-image';image.hidden=true;status.setAttribute('role','status');b.append(image,status);let failed=false,loading=false;
+  const load=()=>{if(loading)return;loading=true;failed=false;b.setAttribute('aria-busy','true');window.AuditImages.render(a,image,status).catch(()=>{failed=true;}).finally(()=>{loading=false;b.setAttribute('aria-busy','false');});};load();
+  b.onclick=()=>{if(failed){load();return;}if(zoom)return;$('zoomImage').replaceChildren(preview(a,true));$('zoomName').textContent=a.name;$('zoomSource').href=a.url;$('zoom').showModal();};return b;
  }
  function draft(){
   const t=task();if(!t)return true;

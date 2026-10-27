@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#123c46"><meta name="description" content="Genの類似候補と切り出しの疑いだけを確認し、採用候補を選んで保存・再開する画像監査。"><title>Gen｜要目視の画像だけ確認</title><link rel="stylesheet" href="audit.css"></head>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#123c46"><meta name="description" content="Genの類似候補と切り出しの疑いだけを確認し、採用候補を選んで保存・再開する画像監査。"><title>Gen｜要目視の画像だけ確認</title><link rel="stylesheet" href="audit.css?v=20261027-images2"></head>
 <body><header><div class="shell head"><a href="./index.html">LINE画像検証</a><span>Gen / 要目視レビュー</span></div></header>
 <main class="shell"><section class="intro"><span class="eyebrow">IMAGE REVIEW</span><h1>疑わしい画像だけ、<br>見比べて選ぶ。</h1><p>似ている画像と、欠け・小さな破片の疑いを抽出しました。選択すると、この端末に保存して次の未確認へ進みます。</p></section>
 <div id="fatal" class="notice error" hidden role="alert"></div><div id="storageState" class="notice" role="status">監査データを読み込んでいます…</div>
@@ -12,4 +12,4 @@
 <details><summary>Google Driveと同期する</summary><p>既存ツールのGoogle接続設定を引き継ぎます。未設定の場合はOAuthクライアントIDを入力して接続してください。接続中は判定を自動保存します。</p><label>Google OAuthクライアントID<input id="clientId" placeholder="xxxx.apps.googleusercontent.com" autocomplete="off"></label><div class="buttonrow"><button id="connect">Googleで接続</button><button id="sync" disabled>今すぐ保存</button><button id="restoreDrive" disabled>Driveの進捗と統合</button></div><p id="driveState" role="status">未接続：Driveには保存されていません。</p></details></section>
 <footer>Gen監査 / 2026-10-27 · <a href="./index.html">既存の1コマ検品へ</a></footer></main>
 <dialog id="zoom"><form method="dialog"><button class="close" aria-label="拡大表示を閉じる">閉じる ×</button></form><div id="zoomImage"></div><p id="zoomName"></p><a id="zoomSource" target="_blank" rel="noopener">Drive原本を開く</a><p class="small">表示は原本から作った縮小プレビューです。細部はDrive原本で確認してください。</p></dialog>
-<script src="audit-core.js"></script><script src="audit-ui.js"></script><script src="https://accounts.google.com/gsi/client" async defer></script></body></html>
+<script src="audit-core.js?v=20261027"></script><script src="audit-images.js?v=20261027-images2"></script><script src="audit-ui.js?v=20261027-images2"></script><script src="https://accounts.google.com/gsi/client" async defer></script></body></html>

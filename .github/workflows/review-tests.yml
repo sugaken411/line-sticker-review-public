@@ -1,7 +1,7 @@
 name: Review engine checks
 on:
   push:
-    paths: ['audit-core.js', 'gen-data.json', 'test-core.cjs', '.github/workflows/review-tests.yml']
+    paths: ['audit-core.js', 'audit-images.js', 'audit-ui.js', 'gen-data.json', 'test-core.cjs', 'test-images.cjs', '.github/workflows/review-tests.yml']
   pull_request:
 jobs:
   review-core:
@@ -12,4 +12,5 @@ jobs:
         with:
           node-version: '22'
       - run: node --test test-core.cjs
+      - run: node --test test-images.cjs
       - run: node --check audit-ui.js
